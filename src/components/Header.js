@@ -3,18 +3,26 @@ import PropTypes from 'prop-types'
 
 const Header = (props) => {
     return ( 
-        <header >
-            <h1>Task Tracker <br /> {props.title}</h1>
+        <header className='header'>
+            <h1>{props.title}</h1>
+            <button className='btn'>Add</button>
         </header>
     )
 }
 
 Header.defaultProps = {
-    title: "React Tutorial",
+    title: "Task Tracker",
 }
 
 Header.propTypes = {
     title: PropTypes.string.isRequired,
 }
+
+// CSS IN JS
+// const headingStyle = {
+//     backgroundColor: 'black',
+//     color: 'skyblue',
+//     padding: '1rem',
+// }
 
 export default Header
