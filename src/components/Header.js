@@ -8,7 +8,7 @@ const Header = (props) => {
     }
 
     return ( 
-        <header style={{border: "1px solid #000"}} className='header'>
+        <header style={{borderBottom: "1px solid #0005"}} className='header'>
             <h1>{props.title}</h1>
             {/* BUTTON STYLES = PROPS */}
             <Button bg={gradient.backgroundColor} color={gradient.color} 
