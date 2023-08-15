@@ -28,6 +28,12 @@ function App() {
     ]
   )
 
+  // ADD TASK FUNCTION 
+  const addTask = (task) => {
+    console.log(task);
+
+  }
+
   // DELETE TASK FUNCTION
   // FILTER ARRAY TO SHOW ITEMS THAT DON'T.. 
   // ..HAVE THE SAME ID AS THE TASK BEING CLICKED ON
@@ -46,7 +52,7 @@ function App() {
   return (
     <div className="container">
       <Header />
-      <AddTask />
+      <AddTask onAdd={addTask} />
       {tasks.length > 0 ? 
       (<Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />) : ('No tasks to show')
       }
