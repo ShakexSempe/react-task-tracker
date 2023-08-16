@@ -30,8 +30,12 @@ function App() {
 
   // ADD TASK FUNCTION 
   const addTask = (task) => {
-    console.log(task);
-
+    // CREATE ID USING MATH OBJECT
+    const id = Math.floor(Math.random() * 10000) + 1;
+    // CRATE NEW OBJECT WITH ID + COPY OF THE PASSED IN DATA(TEXT);
+    const newTask = { id, ...task }
+    // SET TASKS TO NEW ARRAY = COPY CURRENT TASKS + newTask 
+    setTasks([...tasks, newTask])
   }
 
   // DELETE TASK FUNCTION
