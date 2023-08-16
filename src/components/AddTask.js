@@ -8,13 +8,16 @@ const AddTask = ({ onAdd }) => {
     const onSubmit = (e) => {
         e.preventDefault();
 
+        // TASK TEXT VALIDATION
+        // IF TEXT IS NOT THERE ADD ALERT WARNING TEXT
         if(!text) {
             alert('Please add a task')
             return 
         }
 
+        // IF VALIDATION PASSES THEN ADD OBJECT WITH INPUT PROPS 
         onAdd({ text, day, reminder })
-
+        // THEN CLEAR FORM
         setText('')
         setDay('')
         setReminder(false)
