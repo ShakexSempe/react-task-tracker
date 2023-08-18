@@ -60,7 +60,8 @@ function App() {
   return (
     <div className="container">
       {/* HEADER PROP(onAdd) THAT RUNS FUNCTION THAT SETS OPPOSITE OF SHOWTASK BOOLEAN */}
-      <Header onAdd={() => setShowAddTasks(!showAddTask)} />
+      <Header onAdd={() => setShowAddTasks(!showAddTask)}
+              showAdd={showAddTask}/>
       {/* WRAP ADD TASKS IN 'showAddTasks' AND DISPLAY WHEN BOOLEAN = TRUE */}
       {/* IF BOOLEAN = TRUE THEN <ADDTASK />*/}
       {showAddTask && <AddTask onAdd={addTask} />}
