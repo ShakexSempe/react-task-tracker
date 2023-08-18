@@ -28,6 +28,10 @@ function App() {
     ]
   )
 
+  // SHOW TASKS - TOGGLE 'ADD TASK' COMPONENT VISIBILITY 
+  // WHEN HEADER BTN IS CLICKED = SHOW 'ADD TASK' COMPONENT
+  const [showAddTask, setShowAddTasks] = useState(false)
+
   // ADD TASK FUNCTION 
   const addTask = (task) => {
     // CREATE ID USING MATH OBJECT
@@ -55,8 +59,11 @@ function App() {
 
   return (
     <div className="container">
-      <Header />
-      <AddTask onAdd={addTask} />
+      {/* HEADER PROP(onAdd) THAT RUNS FUNCTION THAT SETS OPPOSITE OF SHOWTASK BOOLEAN */}
+      <Header onAdd={() => setShowAddTasks(!showAddTask)} />
+      {/* WRAP ADD TASKS IN 'showAddTasks' AND DISPLAY WHEN BOOLEAN = TRUE */}
+      {/* IF BOOLEAN = TRUE THEN <ADDTASK />*/}
+      {showAddTask && <AddTask onAdd={addTask} />}
       {tasks.length > 0 ? 
       (<Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />) : ('No tasks to show')
       }

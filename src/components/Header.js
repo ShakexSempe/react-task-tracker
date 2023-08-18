@@ -1,19 +1,16 @@
 import PropTypes from 'prop-types'
 import Button from './Button'
 
-const Header = (props) => {
-    // () CALLED FROM BUTTON COMPONENT
-    const onClick = () => {
-        alert("Props btn clicked")
-    }
+const Header = ({ title, onAdd }) => {
+    
 
     return ( 
         <header style={{borderBottom: "1px solid #0005"}} className='header'>
-            <h1>{props.title}</h1>
+            <h1>{title}</h1>
             {/* BUTTON STYLES = PROPS */}
             <Button bg={gradient.backgroundColor} color={gradient.color} 
                     text={gradient.text} 
-                    onClick={onClick} />
+                    onClick={onAdd} />
         </header>
     )
 }
